@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Role-Based Login</title>
+  - <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  + <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+<body>
+  <div class="wrapper">
+    <h2>Choose Role</h2>
+    <div class="role-select">
+      <button onclick="showSection('labour')">Worker</button>
+      <button onclick="showSection('contractor')">Contractor</button>
+    </div>
+
+    <div id="formSection" style="display: none;">
+      <div class="tabs">
+        <button onclick="toggleTab('login')">Login</button>
+        <button onclick="toggleTab('signup')">Signup</button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="loginForm" class="form-box">
+        <input type="text" id="loginMobile" placeholder="Mobile Number" />
+        <input type="password" id="loginPassword" placeholder="Password" />
+        <button onclick="handleLogin()">Login</button>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signupForm" class="form-box">
+        <div id="labourFields">
+          <input type="text" id="labourName" placeholder="Full Name" />
+          <input type="text" id="labourMobile" placeholder="Mobile Number" />
+          <input type="password" id="labourPassword" placeholder="Create Password" />
+          <input type="number" id="labourAge" placeholder="Age (18–60)" />
+          <input type="number" id="labourFamily" placeholder="Family Members" />
+          <select id="labourGender">
+            <option value="">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div id="contractorFields" style="display: none;">
+          <input type="text" id="contractorName" placeholder="Full Name" />
+          <input type="text" id="contractorMobile" placeholder="Mobile Number" />
+          <input type="password" id="contractorPassword" placeholder="Create Password" />
+          <input type="text" id="contractorAddress" placeholder="Address" />
+        </div>
+
+        <button onclick="handleSignup()">Signup</button>
+      </div>
+    </div>
+  </div>
+
+  - <script src="{{ url_for('static', filename='app.js') }}"></script>
+  + <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
